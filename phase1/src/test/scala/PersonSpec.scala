@@ -24,4 +24,19 @@ class PersonSpec extends FlatSpec with Matchers  {
 
     stream.toString should be ("Hi there, John Doe here. I'm alive for 20 years already")
   }
+
+  "A main class with a trait" should "behave output the same that the PersonApp" in {
+    val stream1 = new java.io.ByteArrayOutputStream()
+    val stream2 = new java.io.ByteArrayOutputStream()
+    val personData = Array[String]("Jane Roe", "10/10/2000")
+
+    Console.withOut(stream1) {
+      PersonTraitApp.main(personData)
+    }
+    Console.withOut(stream2) {
+      PersonApp.main(personData)
+    }
+
+    stream1.toString shouldEqual stream2.toString
+  }
 }
