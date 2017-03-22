@@ -7,6 +7,6 @@ class Person (name: String, val dob: LocalDate) {
 
 object Person {
   def calculateAge(person: Person): Long = {
-    ChronoUnit.YEARS.between(person.dob, LocalDate.now) + 1
+    ChronoUnit.YEARS.between(person.dob, LocalDate.now)
   }
 }
