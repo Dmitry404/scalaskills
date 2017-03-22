@@ -22,7 +22,7 @@ class PersonSpec extends FlatSpec with Matchers  {
       PersonApp.main(Array[String]("John Doe", "10/01/1997"))
     }
 
-    stream.toString should be ("Hi there, John Doe here. I'm alive for 20 years already")
+    stream.toString should be (s"Hi there, John Doe here. I'm alive for 20 years already${System.lineSeparator}")
   }
 
   "A main class with a trait" should "behave output the same that the PersonApp" in {
