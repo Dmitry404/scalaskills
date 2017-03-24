@@ -1,4 +1,4 @@
-#### Want to know about Person and its age?
+#### Want to know about a Person and its age?
 
 To run the app invoke sbt as follows
 
@@ -12,7 +12,7 @@ Mind the quotation marks, you'd need to escape them
 sbt "phase1/run-main PersonApp \"John Worm\" 10/10/1900"
 ```
 
-#### Search for Prime numbers
+#### Looking for Prime numbers?
 
 To run the app invoke sbt as follows
 
@@ -26,7 +26,7 @@ or like this
 sbt "phase1/run-main Primes 10 15 27"
 ```
 
-#### Sum of odd numbers now could be calculated like this
+#### Want to know the Sum of odd numbers?
 
 To run the app invoke sbt as follows
 
