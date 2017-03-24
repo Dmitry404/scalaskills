@@ -8,7 +8,7 @@ class PersonSpec extends UnitSpec  {
     person.dob should be (LocalDate.of(1980, Month.JUNE, 10))
   }
 
-  "A Person class" should "have a companion which calculates its age" in {
+  it should "have a companion which calculates its age" in {
     val person = new Person("John Doe", LocalDate.of(1980, Month.DECEMBER, 31))
 
     Person.calculateAge(person) should be (36) // assuming it's not 31st December now
