@@ -1,12 +1,14 @@
 import java.time.LocalDate
 import java.time.temporal.ChronoUnit
 
-class Person (name: String, val dob: LocalDate) {
+class Person (private val name: String, val dob: LocalDate) {
   def getName: String = name
+
+  def calculateAge(): Long = {
+    ChronoUnit.YEARS.between(dob, LocalDate.now)
+  }
 }
 
 object Person {
-  def calculateAge(person: Person): Long = {
-    ChronoUnit.YEARS.between(person.dob, LocalDate.now)
-  }
+  def apply(name: String, dob: LocalDate): Person = new Person(name, dob)
 }

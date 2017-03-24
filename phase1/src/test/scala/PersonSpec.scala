@@ -9,9 +9,9 @@ class PersonSpec extends UnitSpec  {
   }
 
   it should "have a companion which calculates its age" in {
-    val person = new Person("John Doe", LocalDate.of(1980, Month.DECEMBER, 31))
+    val dob = LocalDate.of(1980, Month.DECEMBER, 31)
 
-    Person.calculateAge(person) should be (36) // assuming it's not 31st December now
+    Person("John Doe", dob).calculateAge() should be (36) // assuming it's not 31st December now
   }
 
   "A main class" should "take persons data then print it to Out" in {
