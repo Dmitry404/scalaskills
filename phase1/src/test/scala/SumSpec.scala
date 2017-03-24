@@ -1,5 +1,3 @@
-import java.util.function.Predicate
-
 import org.scalatest._
 
 class SumSpec extends FlatSpec with Matchers {
