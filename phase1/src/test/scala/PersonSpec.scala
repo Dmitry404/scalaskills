@@ -1,8 +1,6 @@
 import java.time.{LocalDate, Month}
 
-import org.scalatest._
-
-class PersonSpec extends FlatSpec with Matchers  {
+class PersonSpec extends UnitSpec  {
   "A Person class" should "exist" in {
     val person = new Person("John Doe", LocalDate.of(1980, Month.JUNE, 10))
 
@@ -13,7 +11,7 @@ class PersonSpec extends FlatSpec with Matchers  {
   "A Person class" should "have a companion which calculates its age" in {
     val person = new Person("John Doe", LocalDate.of(1980, Month.DECEMBER, 31))
 
-    Person.calculateAge(person) should be (36) // assuming it's now 31st December now
+    Person.calculateAge(person) should be (36) // assuming it's not 31st December now
   }
 
   "A main class" should "take persons data then print it to Out" in {

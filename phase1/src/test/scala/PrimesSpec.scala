@@ -1,6 +1,4 @@
-import org.scalatest._
-
-class PrimesSpec extends FlatSpec with Matchers {
+class PrimesSpec extends UnitSpec {
   "A Primes.contains result" should "be negative when empty List is passed" in {
     Primes.contains(List()) shouldBe false
   }

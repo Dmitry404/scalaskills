@@ -1,6 +1,4 @@
-import org.scalatest._
-
-class SumSpec extends FlatSpec with Matchers {
+class SumSpec extends UnitSpec {
   "Sum of 0" should "should be 0" in {
     Sum.odds(List(0)) shouldBe 0
   }
