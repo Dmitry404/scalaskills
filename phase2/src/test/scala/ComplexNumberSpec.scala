@@ -1,5 +1,7 @@
 import org.scalatest._
 
+import numbers.Complex
+
 class ComplexNumberSpec extends FlatSpec with Matchers {
   "A string representation" should "be ${real} + ${imaginary}i" in {
     Complex(10, 2.2).toString shouldBe "10.0 + 2.2i"
@@ -25,7 +27,7 @@ class ComplexNumberSpec extends FlatSpec with Matchers {
     (c1 + c2).toString shouldBe "4.4 + 6.6i"
   }
 
-  it should "- be a substraction of two complex numbers" in {
+  it should "- be a subtraction of two complex numbers" in {
     var c1 = Complex(1.1, 2.2)
     var c2 = Complex(3.3, 4.4)
 
@@ -55,28 +57,5 @@ class ComplexNumberSpec extends FlatSpec with Matchers {
     (Complex(1, 2) - 2).toString shouldBe "-1.0 + 2.0i"
     (Complex(1, 2) * 2).toString shouldBe "2.0 + 2.0i"
     (Complex(1, 2) / 2).toString shouldBe "0.5 + 2.0i"
-  }
-
-  class Complex(val re: Double, val im: Double) {
-    def this(re: Double) = this(re, 0)
-
-    override def toString: String = f"$re%2.1f + $im%2.1fi"
-
-    def +(that: Complex) = new Complex(re + that.re, im + that.im)
-    def -(that: Complex) = new Complex(re - that.re, im - that.im)
-    def *(that: Complex) = new Complex(re * that.re, im * that.im)
-    def /(that: Complex) = new Complex(re / that.re, im / that.im)
-
-    def +(value: Double) = new Complex(re + value, im)
-    def -(value: Double) = new Complex(re - value, im)
-    def *(value: Double) = new Complex(re * value, im)
-    def /(value: Double) = new Complex(re / value, im)
-
-    def unary_-() = new Complex(-re, -im)
-  }
-
-  object Complex {
-    def apply(re: Double, im: Double) = new Complex(re, im)
-    def apply(re: Double) = new Complex(re, 0.0)
   }
 }
