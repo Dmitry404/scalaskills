@@ -5,3 +5,4 @@
 ---
 ##### List of excercises 
 - [phase1](phase1/README.md)
+- [phase2](phase2/README.md)
