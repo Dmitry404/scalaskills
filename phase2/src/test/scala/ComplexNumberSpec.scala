@@ -46,6 +46,10 @@ class ComplexNumberSpec extends FlatSpec with Matchers {
     (c1 / c2).toString shouldBe "0.3 + 0.5i"
   }
 
+  it should "unary - should make Complex negative (both real and imaginary parts)" in {
+    (-Complex(1.1, 2.2)).toString shouldBe "-1.1 + -2.2i"
+  }
+
   "Arithmetic operations with numeric values" should "perform given operation with a Complex({num}, 0)" in {
     (Complex(1, 2) + 2).toString shouldBe "3.0 + 2.0i"
     (Complex(1, 2) - 2).toString shouldBe "-1.0 + 2.0i"
@@ -67,6 +71,8 @@ class ComplexNumberSpec extends FlatSpec with Matchers {
     def -(value: Double) = new Complex(re - value, im)
     def *(value: Double) = new Complex(re * value, im)
     def /(value: Double) = new Complex(re / value, im)
+
+    def unary_-() = new Complex(-re, -im)
   }
 
   object Complex {
