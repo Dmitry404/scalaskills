@@ -12,3 +12,9 @@ lazy val phase1 = (project in file("phase1")).
     commonSettings,
     name := "dbutakov-phase1"
   )
+
+lazy val phase2 = (project in file("phase2")).
+  settings(
+    commonSettings,
+    name := "dbutakov-phase2"
+  )
