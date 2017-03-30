@@ -52,6 +52,12 @@ class ComplexNumberSpec extends FlatSpec with Matchers {
     (-Complex(1.1, 2.2)).toString shouldBe "-1.1 + -2.2i"
   }
 
+  it should "be evaluated using correct order" in {
+    val complex2 = Complex(2)
+
+    (complex2 + complex2 * complex2).toString shouldBe "6.0 + 0.0i"
+  }
+
   "Arithmetic operations with numeric values" should "perform given operation with a Complex({num}, 0)" in {
     (Complex(1, 2) + 2).toString shouldBe "3.0 + 2.0i"
     (Complex(1, 2) - 2).toString shouldBe "-1.0 + 2.0i"
