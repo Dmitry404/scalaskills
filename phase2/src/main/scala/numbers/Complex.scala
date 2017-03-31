@@ -21,4 +21,7 @@ class Complex(val re: Double, val im: Double) {
 object Complex {
   def apply(re: Double, im: Double) = new Complex(re, im)
   def apply(re: Double) = new Complex(re, 0.0)
+
+  implicit def intToComplex(value: Int): Complex = new Complex(value)
+  implicit def doubleToComplex(value: Double): Complex = new Complex(value)
 }

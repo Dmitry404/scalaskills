@@ -1,6 +1,8 @@
 import org.scalatest._
 
 import numbers.Complex
+import numbers.Complex._
+
 
 class ComplexNumberSpec extends FlatSpec with Matchers {
   "A string representation" should "be ${real} + ${imaginary}i" in {
@@ -63,5 +65,13 @@ class ComplexNumberSpec extends FlatSpec with Matchers {
     (Complex(1, 2) - 2).toString shouldBe "-1.0 + 2.0i"
     (Complex(1, 2) * 2).toString shouldBe "2.0 + 2.0i"
     (Complex(1, 2) / 2).toString shouldBe "0.5 + 2.0i"
+  }
+
+  "Implicit arithmetic operation with a literal on the left side" should "work for Int" in {
+    (2 + Complex(2)).toString shouldBe "4.0 + 0.0i"
+  }
+
+  it should "work for Double" in {
+    (3.1 + Complex(2)).toString shouldBe "5.1 + 0.0i"
   }
 }
