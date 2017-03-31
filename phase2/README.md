@@ -1,4 +1,4 @@
-#### You can say helo to the Complex numbers now
+#### You can say hello to the Complex numbers
 
 Run the app invoking the following
 
