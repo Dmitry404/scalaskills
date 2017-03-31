@@ -1,8 +1,6 @@
-import java.io.File
-
 import org.scalatest._
 
-import scala.io.Source
+import file.LimitedTextFile
 
 class TextFileSpec extends FlatSpec with Matchers {
   "LimitedTextFile.lines" should "contain only lines with length more than 10" in {
@@ -12,17 +10,4 @@ class TextFileSpec extends FlatSpec with Matchers {
   the [IllegalArgumentException] thrownBy {
     new LimitedTextFile("ababagalamaga")
   } should have message "requirement failed"
-
-  class LimitedTextFile(path: String) {
-    require(new File(path).exists())
-
-    def lines: List[String] = {
-      val lines = for (
-        line <- Source.fromFile(path).getLines()
-        if line.length > 10
-      ) yield line
-
-      lines.toList
-    }
-  }
 }
